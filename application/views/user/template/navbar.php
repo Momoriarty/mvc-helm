@@ -9,15 +9,20 @@
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
 <style>
-    .navbar {
-        opacity: 0;
+    .bgtransparent {
+        background: transparent !important;
         transition: opacity 0.5s;
+    }
+
+    .myNavbar {
+        background: black !important;
+
     }
 </style>
 
 <body>
 
-    <nav class="navbar navbar-expand-lg bg-dark border-bottom border-body fixed-top" id="myNavbar" data-bs-theme="dark">
+    <nav class="navbar navbar-expand-lg bg-dark fixed-top myNavbar" id="myNavbar" data-bs-theme="dark">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">Navbar</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
