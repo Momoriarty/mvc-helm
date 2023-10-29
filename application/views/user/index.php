@@ -68,10 +68,102 @@
 	</div>
 </div>
 
-<section id="produk" style="background-color:#f7f8fa;">
+<section id="produk" style="background-color:#f7f8fa; padding:10px;">
 	<div class="container mt-5">
 		<div class="row">
-			<h2 class="text-center mt-3">Produk</h2>
+			<h2 class="text-center mt-3">Produk Terlaku</h2>
+			<div class="col-md-4 mt-4">
+				<div class="card" style="width: 18rem;">
+					<img src="https://images.unsplash.com/photo-1695653422536-d1e9d449ce7b?auto=format&fit=crop&q=80&w=2070&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+						class="card-img-top" alt="...">
+					<div class="card-body">
+						<h5 class="card-title">Card title</h5>
+						<p class="card-text">Some quick example text to build on the card title and make up the bulk of
+							the
+							card's content.</p>
+						<a href="#" class="btn btn-primary">Go somewhere</a>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-4 mt-4">
+				<div class="card" style="width: 18rem;">
+					<img src="https://images.unsplash.com/photo-1695653422536-d1e9d449ce7b?auto=format&fit=crop&q=80&w=2070&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+						class="card-img-top" alt="...">
+					<div class="card-body">
+						<h5 class="card-title">Card title</h5>
+						<p class="card-text">Some quick example text to build on the card title and make up the bulk of
+							the
+							card's content.</p>
+						<a href="#" class="btn btn-primary">Go somewhere</a>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-4 mt-4">
+				<div class="card" style="width: 18rem;">
+					<img src="https://images.unsplash.com/photo-1695653422536-d1e9d449ce7b?auto=format&fit=crop&q=80&w=2070&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+						class="card-img-top" alt="...">
+					<div class="card-body">
+						<h5 class="card-title">Card title</h5>
+						<p class="card-text">Some quick example text to build on the card title and make up the bulk of
+							the
+							card's content.</p>
+						<a href="#" class="btn btn-primary">Go somewhere</a>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-4 mt-4">
+				<div class="card" style="width: 18rem;">
+					<img src="https://images.unsplash.com/photo-1695653422536-d1e9d449ce7b?auto=format&fit=crop&q=80&w=2070&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+						class="card-img-top" alt="...">
+					<div class="card-body">
+						<h5 class="card-title">Card title</h5>
+						<p class="card-text">Some quick example text to build on the card title and make up the bulk of
+							the
+							card's content.</p>
+						<a href="#" class="btn btn-primary">Go somewhere</a>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-4 mt-4">
+				<div class="card" style="width: 18rem;">
+					<img src="https://images.unsplash.com/photo-1695653422536-d1e9d449ce7b?auto=format&fit=crop&q=80&w=2070&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+						class="card-img-top" alt="...">
+					<div class="card-body">
+						<h5 class="card-title">Card title</h5>
+						<p class="card-text">Some quick example text to build on the card title and make up the bulk of
+							the
+							card's content.</p>
+						<a href="#" class="btn btn-primary">Go somewhere</a>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-4 mt-4">
+				<div class="card" style="width: 18rem;">
+					<img src="https://images.unsplash.com/photo-1695653422536-d1e9d449ce7b?auto=format&fit=crop&q=80&w=2070&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+						class="card-img-top" alt="...">
+					<div class="card-body">
+						<h5 class="card-title">Card title</h5>
+						<p class="card-text">Some quick example text to build on the card title and make up the bulk of
+							the
+							card's content.</p>
+						<a href="#" class="btn btn-primary">Go somewhere</a>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</section>
+
+<section id="produk">
+	<div class="container mt-5">
+		<div class="row">
+			<h2 class="text-center mt-3">Produk Terlaku</h2>
 			<div class="col-md-4 mt-4">
 				<div class="card" style="width: 18rem;">
 					<img src="https://images.unsplash.com/photo-1695653422536-d1e9d449ce7b?auto=format&fit=crop&q=80&w=2070&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"

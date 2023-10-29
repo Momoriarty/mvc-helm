@@ -9,20 +9,26 @@
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
 <style>
-    .bgtransparent {
-        background: transparent !important;
-        transition: opacity 0.5s;
-    }
-
     .myNavbar {
         background: black !important;
+        transition: background 0.5s, color 0.5s;
 
+    }
+
+    .bgtransparent {
+        background: transparent !important;
+        transition: background 0.5s, color 0.5s;
+
+    }
+
+    .container-fluid {
+        flex-direction:column;
     }
 </style>
 
 <body>
 
-    <nav class="navbar navbar-expand-lg bg-dark fixed-top myNavbar" id="myNavbar" data-bs-theme="dark">
+    <nav class="navbar navbar-expand-lg bg-light fixed-top bgtransparent" id="myNavbar" data-bs-theme="dark">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">Navbar</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
