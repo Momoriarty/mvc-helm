@@ -45,69 +45,106 @@
             <h3 class="section-subheading text-muted">Browse through a variety of high-quality helmet options.</h3>
         </div>
         <div class="row">
-            <!-- Helmet 1 -->
-            <div class="col-lg-4 col-sm-6 mb-4">
-                <div class="portfolio-item">
-                    <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal1">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+
+            <?php foreach ($helm as $no => $data) { ?>
+                <!-- Helmet 1 -->
+                <div class="col-lg-4 col-sm-6 mb-4">
+                    <div class="portfolio-item card">
+                        <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal1<?= $data['id'] ?>">
+                            <div class="portfolio-hover">
+                                <div class="portfolio-hover-content"></div>
+                            </div>
+                            <img class="img-fluid card-img-top" src="<?= base_url('assets/img/helm/') . $data['gambar'] ?>"
+                                alt="Helmet 1" />
+                        </a>
+                        <hr>
+                        <div class="portfolio-caption card-body">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <h2 class="portfolio-caption-heading" data-type="Full-Face">
+                                        Merk:
+                                        <?= $data['merk'] ?>
+                                    </h2>
+                                    <div class="portfolio-caption-subheading text-muted">
+                                        Tipe:
+                                        <?= $data['tipe'] ?>
+                                    </div>
+                                    <div class="portfolio-caption-subheading text-muted">
+                                        Ukuran:
+                                        <?= $data['ukuran'] ?>
+                                    </div>
+                                </div>
+                                <div class="text-right">
+                                    <div class="mb-2">
+                                        Harga: $
+                                        <?= $data['harga'] ?>
+                                    </div>
+                                    <div class="d-flex align-items-center">
+                                        <a class="btn btn-primary me-2" href="link_ke_halaman_pembelian.php">Beli</a>
+                                        <a class="btn btn-success" href="link_ke_keranjang.php">
+                                            <i class="fas fa-shopping-cart"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <img class="img-fluid"
-                            src="https://images.unsplash.com/photo-1682687221006-b7fd60cf9dd0?auto=format&fit=crop&q=80&w=2070&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                            alt="Helmet 1" />
-                    </a>
-                    <div class="portfolio-caption">
-                        <h2 class="portfolio-caption-heading" data-type="Full-Face">Classic Helmet</h2>
-                        <div class="portfolio-caption-subheading text-muted">Full-Face</div>
+
                     </div>
                 </div>
-            </div>
-            <!-- Helmet 2 -->
-            <div class="col-lg-4 col-sm-6 mb-4">
-                <div class="portfolio-item">
-                    <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal2">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+
+
+                <div class="portfolio-modal modal fade" id="portfolioModal1<?= $data['id'] ?>" tabindex="-1" role="dialog"
+                    aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="close-modal" data-bs-dismiss="modal"><img
+                                    src="<?= base_url('') ?>assets/user/img/close-icon.svg" alt="Close modal" />
+                            </div>
+                            <div class="container">
+                                <div class="row justify-content-center">
+                                    <div class="col-lg-8">
+                                        <div class="modal-body">
+                                            <!-- Project details-->
+                                            <h2 class="text-uppercase">
+                                                <?= $data['merk'] ?>
+                                            </h2>
+                                            <p class="item-intro text-muted">
+                                                <?= $data['tipe'] ?>
+                                            </p>
+                                            <img class="img-fluid d-block mx-auto"
+                                                src="<?= base_url('assets/img/helm/') . $data['gambar'] ?>" alt="..." />
+                                            <ul class="list-inline">
+                                                <li>
+                                                    <strong>Harga:</strong>
+                                                    <?= $data['harga'] ?>
+                                                </li>
+                                                <li>
+                                                    <strong>ukuran:</strong>
+                                                    <?= $data['ukuran'] ?>
+                                                </li>
+                                                <li>
+                                                    <strong>Stok:</strong>
+                                                    <?= $data['stok'] ?>
+                                                </li>
+                                            </ul>
+                                            <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal"
+                                                type="button">
+                                                <i class="fas fa-xmark me-1"></i>
+                                                Close
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <img class="img-fluid"
-                            src="https://images.unsplash.com/photo-1682687221006-b7fd60cf9dd0?auto=format&fit=crop&q=80&w=2070&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                            alt="Helmet 2" />
-                    </a>
-                    <div class="portfolio-caption">
-                        <h2 class="portfolio-caption-heading" data-type="Off-Road">Adventure Helmet</h2>
-                        <div class="portfolio-caption-subheading text-muted">Off-Road</div>
                     </div>
                 </div>
-            </div>
-            <!-- Helmet 3 -->
-            <div class="col-lg-4 col-sm-6 mb-4">
-                <div class="portfolio-item">
-                    <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal3">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-                        </div>
-                        <img class="img-fluid"
-                            src="https://images.unsplash.com/photo-1682687221006-b7fd60cf9dd0?auto=format&fit=crop&q=80&w=2070&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                            alt="Helmet 3" />
-                    </a>
-                    <div class="portfolio-caption">
-                        <h2 class="portfolio-caption-heading" data-type="Half-Face">Sporty Helmet</h2>
-                        <div class="portfolio-caption-subheading text-muted">Half-Face</div>
-                    </div>
-                </div>
-            </div>
+            <?php } ?>
+
         </div>
     </div>
 </section>
 
-<script>
-    document.querySelectorAll('.portfolio-caption-heading').forEach(function (heading) {
-        heading.addEventListener('click', function () {
-            const type = heading.getAttribute('data-type');
-            alert('You selected: ' + type); // Ganti ini dengan tindakan yang sesuai, misalnya menampilkan helm yang sesuai.
-        });
-    });
-</script>
 
 
 <!-- Tentang Kami-->

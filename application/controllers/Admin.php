@@ -9,6 +9,8 @@ class Admin extends CI_Controller
 		parent::__construct();
 		$this->load->model('Helm_model', 'hm');
 		$this->load->model('Akun_model', 'am');
+		$this->load->model('Pemesanan_model', 'pm');
+		$this->load->model('Riwayat_model', 'rm');
 	}
 	public function index()
 	{
@@ -35,14 +37,16 @@ class Admin extends CI_Controller
 
 	public function pemesanan()
 	{
-		$this->load->view('admin/template/navbar');
+		$data['pemesanan'] = $this->pm->DataPemesanan();
+		$this->load->view('admin/template/navbar', $data);
 		$this->load->view('admin/pemesanan');
 		$this->load->view('admin/template/footer');
 	}
 
 	public function riwayat()
 	{
-		$this->load->view('admin/template/navbar');
+		$data['riwayat'] = $this->rm->DataRiwayat();
+		$this->load->view('admin/template/navbar', $data);
 		$this->load->view('admin/riwayat');
 		$this->load->view('admin/template/footer');
 	}

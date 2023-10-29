@@ -8,8 +8,10 @@ class Akun_model extends CI_Model
         return $this->db->get('akun')->result_array();
     }
 
-    public function simpan()
+    public function registerakun()
     {
+        $level = $this->input->post('level');
+
         $config['upload_path'] = './assets/img/profile/';
         $config['allowed_types'] = 'gif|jpg|png|jpeg';
         $config['max_size'] = 2048;
@@ -18,20 +20,34 @@ class Akun_model extends CI_Model
         $this->load->library('upload', $config);
 
         if ($this->upload->do_upload('profile')) {
+
             $data = [
                 'nama' => $this->input->post('nama'),
                 'username' => $this->input->post('username'),
                 'gmail' => $this->input->post('gmail'),
                 'no_hp' => $this->input->post('no_hp'),
-                'password' => $this->input->post('password'),
-                'level' => $this->input->post('level'),
-                'is_active' => $this->input->post('is_active'),
-                'profile' => $this->upload->data('file_name')
+                'password' => password_hash($this->input->post('password'), PASSWORD_DEFAULT),
+                'level' => $level,
+                'profile' => $this->upload->data('file_name'),
+                'is_active' => '1',
             ];
 
             $this->db->insert('akun', $data);
+            redirect('admin/akun');
         } else {
-            $error = $this->upload->display_errors();
+            $data = [
+                'nama' => $this->input->post('nama'),
+                'username' => $this->input->post('username'),
+                'gmail' => $this->input->post('gmail'),
+                'no_hp' => $this->input->post('no_hp'),
+                'password' => password_hash($this->input->post('password'), PASSWORD_DEFAULT),
+                'level' => 'user',
+                'profile' => 'profile.jpg',
+                'is_active' => '1',
+            ];
+            $this->db->insert('akun', $data);
+            redirect('Login');
+
         }
     }
 
@@ -59,11 +75,6 @@ class Akun_model extends CI_Model
         $data = [
             'nama' => $this->input->post('nama'),
             'username' => $this->input->post('username'),
-            'gmail' => $this->input->post('gmail'),
-            'no_hp' => $this->input->post('no_hp'),
-            'password' => $this->input->post('password'),
-            'level' => $this->input->post('level'),
-            'is_active' => $this->input->post('is_active'),
             'profile' => $profile
         ];
 

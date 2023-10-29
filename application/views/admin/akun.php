@@ -44,7 +44,7 @@
                                 <?= $no + 1; ?>
                             </td>
                             <td>
-                                <img src="<?= base_url('assets/uploads/') . $data['profile'] ?>" width="80" alt="">
+                                <img src="<?= base_url('assets/img/profile/') . $data['profile'] ?>" width="80" alt="">
                             </td>
                             <td>
                                 <?= $data['nama'] ?>
@@ -71,7 +71,7 @@
                                 <button class="btn btn-info editBtn" data-toggle="modal"
                                     data-target="#editModal<?= $data['id'] ?>">Edit</button>
                                 <button class="btn btn-danger deleteBtn" data-toggle="modal"
-                                    data-target="#hapusModal">Delete</button>
+                                    data-target="#hapusModal<?= $data['id'] ?>">Delete</button>
                             </td>
                         </tr>
 
@@ -85,7 +85,7 @@
                                             <span aria-hidden="true">&times;</span>
                                         </button>
                                     </div>
-                                    <form action="<?= base_url('akun/edit/') . $data['id'] ?>" method="post"
+                                    <form action="<?= base_url('login/edit/') . $data['id'] ?>" method="post"
                                         enctype="multipart/form-data">
                                         <div class="modal-body">
                                             <div class="form-group">
@@ -98,9 +98,12 @@
                                                 <input type="text" class="form-control" id="username" name="username"
                                                     value="<?= $data['username'] ?>">
                                             </div>
-                                            <!-- Isi form edit akun sesuai kebutuhan Anda -->
+                                            <div class="form-group">
+                                                <label for="profile">Profile</label>
+                                                <input type="file" class="form-control" id="profile" name="profile">
+                                            </div>
                                         </div>
-                                        <div class="modal-footer">
+                                        <div class=" modal-footer">
                                             <button type="button" class="btn btn-secondary"
                                                 data-dismiss="modal">Tutup</button>
                                             <button type="submit" class="btn btn-primary" id="updateAkun">Simpan
@@ -127,7 +130,7 @@
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
-                                        <a href="<?= base_url('akun/hapus/') . $data['id'] ?>" class="btn btn-danger"
+                                        <a href="<?= base_url('login/hapus/') . $data['id'] ?>" class="btn btn-danger"
                                             id="konfirmasiHapus">Hapus</a>
                                     </div>
                                 </div>
@@ -151,7 +154,7 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form action="<?= base_url('akun/tambah') ?>" method="post" enctype="multipart/form-data">
+            <form action="<?= base_url('login/register') ?>" method="post" enctype="multipart/form-data">
                 <div class="modal-body">
                     <div class="form-group">
                         <label for="nama">Nama</label>
@@ -161,7 +164,26 @@
                         <label for="username">Username</label>
                         <input type="text" class="form-control" id="username" name="username">
                     </div>
-                    <!-- Isi form tambah akun sesuai kebutuhan Anda -->
+                    <div class="form-group">
+                        <label for="Gmail">Gmail</label>
+                        <input type="text" class="form-control" id="Gmail" name="gmail">
+                    </div>
+                    <div class="form-group">
+                        <label for="No Hp">No Hp</label>
+                        <input type="number" class="form-control" id="No Hp" name="no_hp">
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" class="form-control" id="password" name="password">
+                    </div>
+                    <div class="form-group">
+                        <label for="Level">Level</label>
+                        <input type="text" class="form-control" id="Level" name="level">
+                    </div>
+                    <div class="form-group">
+                        <label for="Profile">Profile</label>
+                        <input type="file" class="" id="Profile" name="profile">
+                    </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
