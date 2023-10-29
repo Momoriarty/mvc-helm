@@ -6,8 +6,9 @@ class Admin extends CI_Controller
 
 	public function __construct()
 	{
-		parent:: __construct();
-		$this->load->model('');
+		parent::__construct();
+		$this->load->model('Helm_model', 'hm');
+		$this->load->model('Akun_model', 'am');
 	}
 	public function index()
 	{
@@ -18,14 +19,16 @@ class Admin extends CI_Controller
 
 	public function helm()
 	{
-		$this->load->view('admin/template/navbar');
+		$data['helm'] = $this->hm->DataHelm();
+		$this->load->view('admin/template/navbar', $data);
 		$this->load->view('admin/helm');
 		$this->load->view('admin/template/footer');
 	}
 
 	public function akun()
 	{
-		$this->load->view('admin/template/navbar');
+		$data['akun'] = $this->am->DataAkun();
+		$this->load->view('admin/template/navbar', $data);
 		$this->load->view('admin/akun');
 		$this->load->view('admin/template/footer');
 	}
