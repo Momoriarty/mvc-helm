@@ -80,7 +80,7 @@
                                         <?= $data['harga'] ?>
                                     </div>
                                     <div class="d-flex align-items-center">
-                                        <a class="btn btn-primary me-2" href="link_ke_halaman_pembelian.php">Beli</a>
+                                        <a class="btn btn-primary me-2" href="<?= base_url('beranda/detail/') . $data['id'] ?>">Learn more</a>
                                         <a class="btn btn-success" href="link_ke_keranjang.php">
                                             <i class="fas fa-shopping-cart"></i>
                                         </a>

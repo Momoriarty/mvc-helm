@@ -34,7 +34,6 @@ class Login extends CI_Controller
         $user = $this->db->get_where('akun', ['username' => $username])->row_array();
 
         if (!$user) {
-            // Jika tidak ada pengguna dengan 'username', coba mencari berdasarkan 'email'
             $user = $this->db->get_where('akun', ['email' => $username])->row_array();
         }
 
@@ -51,8 +50,8 @@ class Login extends CI_Controller
                     if ($user['level'] == 'admin') {
                         $data = [
                             'id' => $user['id'],
-                            'nama_user' => $user['nama_user'],
-                            'email' => $user['email'],
+                            'nama_user' => $user['nama'],
+                            'gmail' => $user['gmail'],
                             'no_hp' => $user['no_hp'],
                             'username' => $user['username'],
                             'password' => $user['password'],
@@ -64,7 +63,7 @@ class Login extends CI_Controller
                     } else {
                         $data = [
                             'id' => $user['id'],
-                            'nama_user' => $user['nama_user'],
+                            'nama_user' => $user['nama'],
                             'email' => $user['email'],
                             'no_hp' => $user['no_hp'],
                             'username' => $user['username'],

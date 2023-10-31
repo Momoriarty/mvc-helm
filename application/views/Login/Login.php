@@ -305,17 +305,21 @@
                                     <div class="center-wrap">
                                         <div class="section text-center">
                                             <h4 class="mb-4 pb-3">Log In</h4>
-                                            <div class="form-group">
-                                                <input type="email" class="form-style" placeholder="Email">
-                                                <i class="input-icon uil uil-at"></i>
-                                            </div>
-                                            <div class="form-group mt-2">
-                                                <input type="password" class="form-style" placeholder="Password">
-                                                <i class="input-icon uil uil-lock-alt"></i>
-                                            </div>
-                                            <a href="https://www.web-leb.com/code" class="btn mt-4">Login</a>
-                                            <p class="mb-0 mt-4 text-center"><a href="https://www.web-leb.com/code"
-                                                    class="link">Forgot your password?</a></p>
+                                            <form action="<?= base_url('login/login') ?>" method="post">
+                                                <div class="form-group">
+                                                    <input type="text" class="form-style" name="username"
+                                                        placeholder="username">
+                                                    <i class="input-icon uil uil-at"></i>
+                                                </div>
+                                                <div class="form-group mt-2">
+                                                    <input type="password" class="form-style" name="password"
+                                                        placeholder="Password">
+                                                    <i class="input-icon uil uil-lock-alt"></i>
+                                                </div>
+                                                <button type="submit" class="btn mt-4">Login</button>
+                                                <p class="mb-0 mt-4 text-center"><a href="https://www.web-leb.com/code"
+                                                        class="link">Forgot your password?</a></p>
+                                            </form>
                                         </div>
                                     </div>
                                 </div>
@@ -325,23 +329,28 @@
                                             <h4 class="mb-3 pb-3">Sign Up</h4>
                                             <form action="<?= base_url('login/register') ?>" method="post">
                                                 <div class="form-group">
-                                                    <input type="text" class="form-style" name="nama" placeholder="Full Name">
+                                                    <input type="text" class="form-style" name="nama"
+                                                        placeholder="Full Name">
                                                     <i class="input-icon uil uil-user"></i>
                                                 </div>
                                                 <div class="form-group mt-2">
-                                                    <input type="tel" class="form-style" name="username" placeholder="Username">
+                                                    <input type="tel" class="form-style" name="username"
+                                                        placeholder="Username">
                                                     <i class="input-icon uil uil-user"></i>
                                                 </div>
                                                 <div class="form-group mt-2">
-                                                    <input type="tel" class="form-style" name="no_hp" placeholder="Phone Number">
+                                                    <input type="tel" class="form-style" name="no_hp"
+                                                        placeholder="Phone Number">
                                                     <i class="input-icon uil uil-phone"></i>
                                                 </div>
                                                 <div class="form-group mt-2">
-                                                    <input type="email" class="form-style" name="gmail" placeholder="Email">
+                                                    <input type="email" class="form-style" name="gmail"
+                                                        placeholder="Email">
                                                     <i class="input-icon uil uil-at"></i>
                                                 </div>
                                                 <div class="form-group mt-2">
-                                                    <input type="password" class="form-style" name="password" placeholder="Password">
+                                                    <input type="password" class="form-style" name="password"
+                                                        placeholder="Password">
                                                     <i class="input-icon uil uil-lock-alt"></i>
                                                 </div>
                                                 <button type="submit" class="btn mt-4">Register</button>

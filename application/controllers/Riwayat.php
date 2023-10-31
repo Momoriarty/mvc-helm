@@ -12,7 +12,6 @@ class Riwayat extends CI_Controller
     public function tambah()
     {
         $this->rm->simpan();
-        redirect('admin/Riwayat');
     }
     public function edit($id)
     {

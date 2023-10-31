@@ -29,13 +29,74 @@
                 <i class="fas fa-bars ms-1"></i>
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
-                    <li class="nav-item"><a class="nav-link" href="#helm-sales">Helm Sales</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#helm-collection">Helm Collection</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#about">About Us</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#our-team">Our Team</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact">Contact Us</a></li>
-                </ul>
+                <?php if ($this->session->userdata('username')) { ?>
+                    <?php if (isset($beranda) && $beranda) { ?>
+                        <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
+                            <li class="nav-item"><a class="nav-link" href="<?= base_url('beranda') ?>">Beranda</a></li>
+                            <div class="dropdown">
+                                <button class="btn btn-secondary" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="fa-solid fa-user"></i>
+                                </button>
+                                <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                                    aria-labelledby="userDropdown">
+                                    <a class="dropdown-item" href="<?= base_url('beranda/profile') ?>">
+                                        <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                                        Profile
+                                    </a>
+                                    <a class="dropdown-item" href="<?= base_url('beranda/pemesanan') ?>">
+                                        <i class="fa-solid fa-envelope"></i>
+                                        Riwayat Pesanan Anda
+                                    </a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="<?= base_url('login/logout') ?>" data-toggle="modal"
+                                        data-target="#logoutModal">
+                                        <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                                        Logout
+                                    </a>
+                                </div>
+                            </div>
+                        </ul>
+                    <?php } else { ?>
+                        <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
+                            <li class="nav-item"><a class="nav-link" href="#helm-sales">Helm Sales</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#helm-collection">Produk</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#about">About Us</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#our-team">Our Team</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#contact">Contact Us</a></li>
+                            <div class="dropdown">
+                                <button class="btn btn-secondary" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="fa-solid fa-user"></i>
+                                </button>
+                                <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                                    aria-labelledby="userDropdown">
+                                    <a class="dropdown-item" href="<?= base_url('beranda/profile') ?>">
+                                        <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                                        Profile
+                                    </a>
+                                    <a class="dropdown-item" href="<?= base_url('beranda/pemesanan') ?>">
+                                        <i class="fa-solid fa-envelope"></i>
+                                        Riwayat Pesanan Anda
+                                    </a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="<?= base_url('login/logout') ?>">
+                                        <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                                        Logout
+                                    </a>
+                                </div>
+                            </div>
+                        </ul>
+                    <?php } ?>
+
+                <?php } else { ?>
+                    <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
+                        <li class="nav-item"><a class="nav-link" href="#helm-sales">Helm Sales</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#helm-collection">Produk</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#about">About Us</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#our-team">Our Team</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#contact">Contact Us</a></li>
+                        <li class="nav-item"><a class="nav-link" href="<?= base_url('login') ?>">Login</a></li>
+                    </ul>
+                <?php } ?>
             </div>
         </div>
     </nav>
