@@ -21,7 +21,7 @@
                         <?= $data['pemesanan_id']; ?>
                     </td>
                     <td>
-                        <?= $data['tanggal_pesan']; ?>
+                        <?= $data['tanggal_bayar']; ?>
                     </td>
                     <td>
                         <?= $data['status']; ?>
@@ -30,7 +30,7 @@
                         <?= '$' . $data['harga']; ?>
                     </td>
                     <td>
-                        <?= $data['total_pesanan']; ?>
+                        <?= $data['total_pesan']; ?>
                     </td>
                     <td>
                         <?= '$' . $data['total_harga']; ?>
@@ -41,9 +41,14 @@
                     <td>
                         <?= '$' . $data['kembalian']; ?>
                     </td>
-                    <td>
-                        <a href="<?= base_url('Beranda/bayar') ?>">Bayar</a>
-                    </td>
+                    <?php if ($data['status'] == 'selesai') { ?>
+                        <td>
+                            <a href="<?= base_url('beranda/bayar_detail/') . $data['pemesanan_id'] ?>">Detail</a>
+                        </td>
+                    <?php } else { ?>
+
+                    <?php } ?>
+
                 </tr>
             <?php } ?>
         </tbody>

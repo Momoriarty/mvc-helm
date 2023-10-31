@@ -64,7 +64,7 @@ class Login extends CI_Controller
                         $data = [
                             'id' => $user['id'],
                             'nama_user' => $user['nama'],
-                            'email' => $user['email'],
+                            'gmail' => $user['gmail'],
                             'no_hp' => $user['no_hp'],
                             'username' => $user['username'],
                             'password' => $user['password'],

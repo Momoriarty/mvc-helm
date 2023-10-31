@@ -4,6 +4,7 @@
         <form action="<?= base_url('riwayat/tambah') ?>" method="post">
             <div class="card-body">
                 <input type="hidden" name="nama_pelanggan" value="<?= $bayar['nama_pelanggan'] ?>">
+                <input type="hidden" value="<?= $_SESSION['gmail'] ?>" name="gmail">
                 <div class="form-group">
                     <label for="pemesananID"><strong>Pemesanan ID:</strong></label>
                     <input type="text" class="form-control" id="pemesananID" name="pemesanan_id" value="<?= $bayar['pemesanan_id'] ?>" readonly>

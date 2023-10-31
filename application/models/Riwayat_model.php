@@ -21,13 +21,20 @@ class Riwayat_model extends CI_Model
             'total_pesan' => $this->input->post('total_pesan'),
             'total_harga' => $this->input->post('total_harga'),
             'nominal' => $this->input->post('nominal'),
+            'gmail' => $this->input->post('gmail'),
             'kembalian' => $this->input->post('nominal') - $this->input->post('total_harga')
         ];
+
         $this->db->insert('riwayat', $data);
+
+        $helm = $this->db->get_where('helm', ['merk' => $this->input->post('merk')])->row_array();
+        $sisa_stok = $helm['stok'] - $this->input->post('total_pesan');
+
+        $this->db->where('merk', $helm['merk']);
+        $this->db->update('helm', ['stok' => $sisa_stok]);
+
+
         redirect('beranda/bayar_detail/' . $this->input->post('pemesanan_id'));
-
-
-
     }
 
     public function update($id)

@@ -16,10 +16,15 @@
             <p>Harga: $
                 <?= $helm['harga'] ?>
             </p>
-            <a class="btn btn-primary me-2" data-toggle="modal" data-target="#beliModal">Beli</a>
-            <a class="btn btn-success" data-toggle="modal" data-target="#keranjangModal">
-                <i class="fas fa-shopping-cart"></i>
-            </a>
+            <?php if (!$this->session->userdata('username')) { ?>
+                <a href="<?= base_url('login') ?>" class="btn btn-primary" >Login Dulu ya</a>
+            <?php } else { ?>
+                <a class="btn btn-primary me-2" data-toggle="modal" data-target="#beliModal">Beli</a>
+                <a class="btn btn-success" data-toggle="modal" data-target="#keranjangModal">
+                    <i class="fas fa-shopping-cart"></i>
+                </a>
+            <?php } ?>
+
 
         </div>
     </div>
@@ -37,8 +42,8 @@
             </div>
             <form action="<?= base_url('beranda/bayar') ?>" method="post">
                 <div class="modal-body">
-                    <input type="hidden" class="form-control" name="nama_pelanggan" value="<?= $_SESSION['nama_user'] ?>"
-                        readonly>
+                    <input type="hidden" class="form-control" name="nama_pelanggan"
+                        value="<?= $_SESSION['nama_user'] ?>" readonly>
                     <div class="col-mb-6">
                         <label for="">Merk</label>
                         <input type="text" class="form-control" name="merk" value="<?= $helm['merk'] ?>" readonly>

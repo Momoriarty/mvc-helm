@@ -11,6 +11,10 @@ class Admin extends CI_Controller
 		$this->load->model('Akun_model', 'am');
 		$this->load->model('Pemesanan_model', 'pm');
 		$this->load->model('Riwayat_model', 'rm');
+
+		if (!$this->session->userdata('username')) {
+			redirect(base_url('login'));
+		}
 	}
 	public function index()
 	{

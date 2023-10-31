@@ -29,7 +29,7 @@ class Beranda extends CI_Controller
 	}
 	public function pemesanan()
 	{
-		$data['pesanan'] = $this->db->get('pemesanan')->result_array();
+		$data['pesanan'] = $this->db->get('riwayat')->result_array();
 		$data['beranda'] = true;
 		$this->load->view('user/template/navbar', $data);
 		$this->load->view('user/pemesanan');
@@ -65,6 +65,8 @@ class Beranda extends CI_Controller
 
 	public function bayar_detail($id)
 	{
+		$data['beranda'] = true;
+
 		$data['riwayat'] = $this->db->get_where('riwayat', ['pemesanan_id' => $id])->row_array();
 		$this->load->view('user/template/navbar', $data);
 		$this->load->view('user/bayar_detail');
